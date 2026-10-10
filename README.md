@@ -23,6 +23,18 @@ Dark. Dense. Keyboard‑driven. Zero paid API keys, zero subscriptions.
 
 <br/>
 
+## InferCrane decision lab
+
+This fork adds **Newsflash**, a paper-market replay for showing how a bounded decision model behaves inside a familiar real-world interface.
+
+Open [`http://localhost:3000/newsflash`](http://localhost:3000/newsflash), read the same market event as Commerce-1, choose **UP**, **DOWN**, or **NO TRADE**, then reveal the withheld price window. The screen exposes the model's complete action distribution, decision time, paper P&L, and a round-by-round audit ledger. The original live OpenTerminal workspace remains available at `/`.
+
+Newsflash never places an order. Its market events are synthetic replays and it is not investment advice. Without model credentials it uses clearly labeled deterministic replay fixtures. To connect an OpenRouter-compatible Commerce-1 endpoint, copy `.env.example` to `.env.local` and set `COMMERCE1_DECISIONS_URL`, `COMMERCE1_API_KEY`, and `COMMERCE1_MODEL`.
+
+This extension preserves and credits the original [OpenTerminal](https://github.com/ErTasselli/OpenTerminal) project by ErTasselli under its MIT license.
+
+<br/>
+
 ## Why OpenTerminal?
 
 Real trading terminals cost **$2,000+ a month**. Most retail dashboards either lock the good stuff behind a paywall or run on a single flaky data source that breaks the moment you actually need it.

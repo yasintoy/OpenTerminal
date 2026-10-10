@@ -1,6 +1,8 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { apiGet } from "../lib/api";
 import { useTerminal } from "../store/terminal";
@@ -37,13 +39,15 @@ function marketStateNY(): { label: string; open: boolean } {
   return { label: open ? "NYSE OPEN" : "NYSE CLOSED", open };
 }
 
-export default function TopBar() {
+export default function TopBar({ replayMode = false }: { replayMode?: boolean }) {
+  const pathname = usePathname();
   const setCommandOpen = useTerminal((s) => s.setCommandOpen);
   const activeSymbol = useTerminal((s) => s.activeSymbol);
   const { data: status } = useQuery({
     queryKey: ["status"],
     queryFn: () => apiGet<Status>("/api/status"),
     refetchInterval: 30_000,
+    enabled: !replayMode,
   });
 
   const market = marketStateNY();
@@ -63,13 +67,21 @@ export default function TopBar() {
       >
         {activeSymbol} — search symbol… <span className="float-right">⌘K</span>
       </button>
+      <Link
+        href={pathname === "/newsflash" ? "/" : "/newsflash"}
+        className="term-btn-link topbar-model-link"
+      >
+        {pathname === "/newsflash" ? "LIVE TERMINAL" : "MODEL LAB"}
+      </Link>
       <span className="dim ml-auto">
         feeds:{" "}
-        {healthy.length > 0
+        {replayMode
+          ? "deterministic replay"
+          : healthy.length > 0
           ? healthy.map((p) => `${p.name} ${p.lastLatencyMs ?? "—"}ms`).join(" · ")
           : "connecting…"}
       </span>
-      <span className={status?.ai ? "up" : "dim"}>AI {status?.ai ? "●" : "○"}</span>
+      <span className={replayMode || status?.ai ? "up" : "dim"}>AI {replayMode || status?.ai ? "●" : "○"}</span>
     </header>
   );
 }

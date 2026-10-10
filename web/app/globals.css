@@ -144,6 +144,575 @@ button.term-btn.active {
   color: var(--amber);
 }
 
+.term-btn-link {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  color: var(--text);
+  min-height: 24px;
+  padding: 2px 8px;
+  font-size: 11px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.term-btn-link:hover,
+.term-btn-link.active {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+.newsflash-root {
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-height: 0;
+}
+
+.newsflash-subbar {
+  align-items: center;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex: 0 0 38px;
+  gap: 20px;
+  padding: 5px 12px;
+}
+
+.newsflash-brand,
+.newsflash-subbar nav,
+.newsflash-mode {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.newsflash-brand {
+  letter-spacing: 0.08em;
+}
+
+.newsflash-mode {
+  margin-left: auto;
+}
+
+.newsflash-main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  overflow: auto;
+}
+
+.newsflash-stats {
+  background: var(--panel-2);
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  flex: 0 0 56px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.newsflash-stats > div {
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6px 12px;
+}
+
+.newsflash-stats > div:last-child {
+  border-right: 0;
+}
+
+.newsflash-stats span,
+.newsflash-order > span,
+.newsflash-human-turn > span,
+.newsflash-reveal > span,
+.newsflash-result-grid span {
+  color: var(--text-dim);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.newsflash-stats strong {
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.newsflash-workspace {
+  display: grid;
+  flex: 1;
+  gap: 4px;
+  grid-template-columns: minmax(0, 1fr) 390px;
+  grid-template-rows: minmax(510px, 1fr) 168px;
+  min-height: 0;
+  padding: 4px;
+}
+
+.newsflash-market-panel,
+.newsflash-decision-panel,
+.newsflash-ledger-panel {
+  min-height: 0;
+}
+
+.newsflash-ledger-panel {
+  grid-column: 1 / -1;
+}
+
+.newsflash-tape {
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  min-height: 44px;
+  padding: 5px 10px;
+}
+
+.newsflash-tape > div,
+.newsflash-price {
+  align-items: baseline;
+  display: flex;
+  gap: 10px;
+}
+
+.newsflash-symbol,
+.newsflash-price strong {
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.newsflash-price span {
+  font-size: 11px;
+}
+
+.newsflash-headline {
+  border-bottom: 1px solid var(--border);
+  padding: 12px 14px 10px;
+}
+
+.newsflash-kicker,
+.newsflash-tags {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.newsflash-kicker {
+  color: var(--text-dim);
+  font-size: 10px;
+  letter-spacing: 0.07em;
+}
+
+.newsflash-headline h1 {
+  color: #f0f0f0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(19px, 2vw, 29px);
+  font-weight: 400;
+  line-height: 1.13;
+  margin: 8px 0 6px;
+  max-width: 920px;
+}
+
+.newsflash-headline p {
+  color: #aaa;
+  font-family: system-ui, sans-serif;
+  font-size: 12px;
+  line-height: 1.45;
+  margin: 0;
+  max-width: 860px;
+}
+
+.newsflash-tags {
+  gap: 5px;
+  margin-top: 9px;
+}
+
+.newsflash-tags span {
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 9px;
+  padding: 2px 5px;
+}
+
+.newsflash-chart {
+  flex: 1;
+  min-height: 230px;
+  width: 100%;
+}
+
+.newsflash-chart-footer {
+  align-items: center;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 12px;
+  min-height: 27px;
+  padding: 4px 10px;
+}
+
+.newsflash-chart-footer span:last-child {
+  margin-left: auto;
+}
+
+.newsflash-decision-panel {
+  overflow: auto;
+}
+
+.newsflash-order,
+.newsflash-human-turn,
+.newsflash-reveal,
+.newsflash-provenance {
+  border-bottom: 1px solid var(--border);
+  padding: 13px 14px;
+}
+
+.newsflash-order p {
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 6px 0 10px;
+}
+
+.newsflash-contract {
+  display: grid;
+  gap: 4px 10px;
+  grid-template-columns: auto 1fr;
+}
+
+.newsflash-contract span {
+  color: var(--text-dim);
+  font-size: 9px;
+}
+
+.newsflash-contract strong {
+  color: var(--amber);
+  font-size: 10px;
+  text-align: right;
+}
+
+.newsflash-human-turn h2 {
+  color: #f1f1f1;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  font-weight: 400;
+  margin: 5px 0 11px;
+}
+
+.newsflash-actions {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.newsflash-actions button {
+  align-items: center;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-family: inherit;
+  gap: 3px;
+  min-height: 65px;
+  justify-content: center;
+}
+
+.newsflash-actions button:hover,
+.newsflash-actions button.selected {
+  border-color: var(--amber);
+  background: #17130c;
+}
+
+.newsflash-actions button span {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.newsflash-actions button strong {
+  font-size: 10px;
+}
+
+.newsflash-primary,
+.newsflash-secondary {
+  border: 1px solid var(--amber);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 8px;
+  min-height: 34px;
+  width: 100%;
+}
+
+.newsflash-primary {
+  background: var(--amber);
+  color: #000;
+}
+
+.newsflash-primary:hover:not(:disabled) {
+  background: #ffad2f;
+}
+
+.newsflash-primary:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+
+.newsflash-secondary {
+  background: transparent;
+  color: var(--amber);
+}
+
+.newsflash-secondary:hover {
+  background: #17130c;
+}
+
+.newsflash-sealed {
+  background: #0d0d0d;
+  border: 1px dashed #333;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  margin-top: 12px;
+  padding: 9px;
+}
+
+.newsflash-sealed span,
+.newsflash-sealed p {
+  color: var(--text-dim);
+}
+
+.newsflash-sealed strong {
+  color: var(--amber);
+  font-size: 10px;
+}
+
+.newsflash-sealed p {
+  grid-column: 1 / -1;
+  margin: 4px 0 0;
+}
+
+.newsflash-model-call {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0 12px;
+}
+
+.newsflash-model-call strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 39px;
+  font-weight: 400;
+}
+
+.newsflash-model-call span {
+  font-size: 12px;
+}
+
+.newsflash-probabilities {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.probability-row {
+  align-items: center;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 60px 1fr 34px;
+}
+
+.probability-row > span:first-child,
+.probability-row strong {
+  font-size: 10px;
+}
+
+.probability-row strong {
+  text-align: right;
+}
+
+.probability-track {
+  background: #222;
+  height: 7px;
+  overflow: hidden;
+  position: relative;
+}
+
+.probability-fill {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform-origin: left center;
+  width: 100%;
+}
+
+.probability-up { background: var(--up); }
+.probability-down { background: var(--down); }
+.probability-no-trade { background: var(--amber); }
+
+.newsflash-result-grid {
+  border: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 14px 0 2px;
+}
+
+.newsflash-result-grid > div {
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  min-height: 54px;
+  padding: 7px;
+}
+
+.newsflash-result-grid > div:nth-child(odd) { border-right: 1px solid var(--border); }
+.newsflash-result-grid > div:nth-last-child(-n + 2) { border-bottom: 0; }
+.newsflash-result-grid strong { margin-top: 4px; }
+
+.newsflash-provenance {
+  border-bottom: 0;
+  color: var(--text-dim);
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.newsflash-provenance strong {
+  color: var(--text);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.newsflash-provenance p {
+  margin: 5px 0 0;
+}
+
+.newsflash-ledger-wrap {
+  overflow: auto;
+}
+
+.newsflash-ledger th,
+.newsflash-ledger td {
+  height: 25px;
+}
+
+.newsflash-empty {
+  align-items: center;
+  color: var(--text-dim);
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 1px solid var(--amber);
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  html,
+  body {
+    overflow: auto;
+  }
+
+  .newsflash-root {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .newsflash-root > header .dim,
+  .newsflash-root > header button,
+  .newsflash-root > header .topbar-model-link {
+    display: none;
+  }
+
+  .newsflash-root > header {
+    justify-content: space-between;
+  }
+
+  .newsflash-subbar {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 8px;
+  }
+
+  .newsflash-mode {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .newsflash-stats {
+    flex-basis: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .newsflash-stats > div {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .newsflash-stats > div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .newsflash-workspace {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .newsflash-market-panel,
+  .newsflash-decision-panel,
+  .newsflash-ledger-panel {
+    min-height: auto;
+  }
+
+  .newsflash-chart {
+    height: 330px;
+    min-height: 330px;
+  }
+
+  .newsflash-chart-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .newsflash-chart-footer span:last-child {
+    margin-left: 0;
+  }
+
+  .newsflash-ledger-panel {
+    min-height: 210px;
+  }
+}
+
+@media (max-width: 520px) {
+  .newsflash-subbar nav {
+    order: 3;
+    width: 100%;
+  }
+
+  .newsflash-tape {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .newsflash-headline {
+    padding: 10px;
+  }
+
+  .newsflash-headline h1 {
+    font-size: 21px;
+  }
+
+  .newsflash-workspace {
+    padding: 0;
+  }
+}
+
 .react-grid-item.react-grid-placeholder {
   background: var(--amber-dim) !important;
   opacity: 0.2;
